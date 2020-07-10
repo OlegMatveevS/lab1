@@ -27,7 +27,8 @@ body {
 #main {
     display: flex;
     position: relative;
-    left: 600px;
+    top: 20px;
+    left: 650px;
     width: 700px;
     height: 700px;
 }
