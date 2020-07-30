@@ -18,3 +18,4 @@ function calcTimer($start, $end) {
     else
         return $calcTimerSec + $calcTimerMsec;
 }
+
