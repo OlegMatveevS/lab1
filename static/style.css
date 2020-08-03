@@ -37,35 +37,35 @@ table.max-size {
     background: red;
 }
 
-.selector {
+.inputX {
     position: relative;
-    top: 15%;
-    left: 60%;
-    width: 3%;
-    height: 5%;
-}
-
-.selector select {
-    background: .75rem 1rem;
-    border: 1px solid #008CBA;
-    -webkit-appearance: none;
-    appearance: none;
-    font-family: inherit;
-    font-size: 1rem;
-    color: #008CBA;
-    text-align: center;
-}
-
-
-.xselect {
-    position: absolute;
-    display: inline-block;
-    margin: 0 5px;
-    background: rgba(0,0,0,0.2);
+    top: 1px;
+    float: left;
+    height: 220px;
+    width: 70px;
+    margin: 1px;
     border: 0.3vh solid #008CBA;
     border-radius: 0.5vh;
 }
 
+.inputR {
+    position: relative;
+    top: 1px;
+    float: left;
+    margin: 1px;
+    border: 0.3vh solid #008CBA;
+    border-radius: 0.5vh;
+}
+
+.inputY {
+    position: relative;
+    top: 1px;
+    float: left;
+    width: 107px;
+    margin: 1px;
+    border: 0.3vh solid #008CBA;
+    border-radius: 0.5vh;
+}
 
 .centered {
     text-align: center;
@@ -85,4 +85,30 @@ table.max-size {
     color: white;
     padding: 2%;
     background-color: blue;
+}
+
+.sendButton {
+    position: relative;
+    float: left;
+    width: 111px;
+    height: 46px;
+    top: 1px;;
+    margin: 1px;
+    border: 0.3vh solid #008CBA;
+    border-radius: 0.5vh;
+}
+
+.resetButton {
+    position: relative;
+    float: left;
+    width: 111px;
+    height: 46px;
+    top: 1px;
+    margin: 1px;
+    border: 0.3vh solid #008CBA;
+    border-radius: 0.5vh;
+}
+
+.block-set {
+    width: 200px;
 }

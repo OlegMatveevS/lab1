@@ -4,8 +4,6 @@ $rValues = [1, 2, 3, 4, 5];
 $yMax = 5;
 $yMin = -3;
 
-$areaImg = '<img id="areas-img" src="static/images/areas.PNG">';
-
 function calcTimer($start, $end) {
     $startCalcTimer = explode(' ', $start);
     $endCalcTimer = explode(' ', $end);

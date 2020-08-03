@@ -7,44 +7,72 @@
     <link href="static/button.css" rel="stylesheet">
 </head>
 <body>
+
 <header class="header studentInf">
 <span>Matveev Oleg Igorevich, P3213</span>
 </header>
 <section class="block-left">
-    <div class="selector">
-        <div class="centered"><strong>R: </strong></div></label>
-    <select>
-        <option disabled>Select R</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-</div>
-<div class="xselect centered">
-    <p style="margin-top: 2%"><strong>X VALUE: </strong></p>
-    <div class="buttons">
-        <p><div class="x-button button1"><span>-3</span></div></p>
-        <p><div class="x-button button1"><span>-2</span></div></p>
-        <p><div class="x-button button1"><span>-1</span></div></p>
-    </div>
+    <div class="block-set">
+    <form name="main-form" action="script.php" method="GET">
+        <div class="inputX centered">
+            <label for><div>X Value:</div></label>
+            <div class="form_radio_group">
+                <div class="form_radio_group-item">
+                    <input id="radio-1" type="radio" name="radio" value="1" checked>
+                    <label for="radio-1">1</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-2" type="radio" name="radio" value="2">
+                    <label for="radio-2">2</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-3" type="radio" name="radio" value="3">
+                    <label for="radio-3">3</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-4" type="radio" name="radio" value="4">
+                    <label for="radio-4">4</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-5" type="radio" name="radio" value="5">
+                    <label for="radio-5">5</label>
+                </div>
+            </div>
+        </div>
 
-    <div class="buttons">
-        <p><div class="x-button button1"><span>2</span></div></p>
-        <p><div class="x-button button1"><span>0</span></div></p>
-        <p><div class="x-button button1"><span>1</span></div></p>
-    </div>
+        <div class="inputR centered">
+            <label for><div>R Value:</div></label>
+            <div>
+                <input type="radio" name="r_set" value="-3">-3
+                <input type="radio" name="r_set" value="0">0
+                <input type="radio" name="r_set" value="3">3
+            </div>
+            <div>
+                <input type="radio" name="r_set" value="-2">-2
+                <input type="radio" name="r_set" value="1">1
+                <input type="radio" name="r_set" value="4">4
+            </div>
+            <div>
+                <input type="radio" name="r_set" value="-1">-1
+                <input type="radio" name="r_set" value="2">2
+                <input type="radio" name="r_set" value="5">5
+            </div>
+        </div>
 
-    <div class="buttons">
-        <p><div class="x-button button1"><span>3</span></div></p>
-        <p><div class="x-button button1"><span>4</span></div></p>
-        <p><div class="x-button button1"><span>5</span></div></p>
-    </div>
+            <div>
+                <div class="inputY centered">
+                    <label for><div>Y Value:</div></label>
+                    <input type="text" name="y_set" required size="1">
+                </div>
+            </div>
+
+        <INPUT class="resetButton" type=reset value=Сброс>
+        <INPUT class="sendButton" type=submit value=Пуск>
+    </form>
 </div>
 </section>
-<section class="block-right">
 
+<section class="block-right">
 </section>
 </table>
 
