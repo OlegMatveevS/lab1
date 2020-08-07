@@ -27,14 +27,16 @@ table.max-size {
     height: 80vh;
     overflow: auto;
     float: left;
-    background: white;
+    background: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .block-right {
     width: 20%;
     height: 80vh;
     overflow: auto;
-    background: red;
+    background: #F2F2F2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .inputX {
@@ -74,17 +76,17 @@ table.max-size {
 .header {
     font-family: "Times New Roman", sans-serif;
     font-size: large;
-    color: white;
+    color: black;
     padding: 2%;
-    background-color: blue;
+    background-color: hsla(0,0%,100%,.2);
 }
 
 .footer {
     font-family: "Times New Roman", sans-serif;
     font-size: large;
-    color: white;
+    color: black;
     padding: 2%;
-    background-color: blue;
+    background-color: hsla(0,0%,100%,.2);
 }
 
 .sendButton {

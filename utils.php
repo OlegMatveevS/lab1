@@ -17,3 +17,32 @@ function calcTimer($start, $end) {
         return $calcTimerSec + $calcTimerMsec;
 }
 
+function check($x, $y, $r)
+{
+    $startTime = microtime();
+    $result = false;
+    if ($x < 0 and $y < 0) {
+        $result = false;
+    } elseif ($x >= 0 and $y >= 0) {
+        if ($x <= $r and $y <= $r)
+            $result = true;
+    } elseif ($x <= 0 and $y >= 0)
+        $result = pow($x, 2) + pow($y, 2) <= pow($r, 2);
+    elseif ($x <= ((int)$r) / 2 and $y >= $r)
+        $result = true;
+
+    $calcTime = calcTimer($startTime, microtime());
+
+    $_SESSION['results'][] = array(
+        'x' => $x,
+        'y' => $y,
+        'r' => $r,
+        'result' => $result,
+        'calcTime' => $calcTime
+    );
+
+    return $result;
+}
+
+
+
