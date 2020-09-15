@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="static/style.css" rel="stylesheet">
+    <link href="static/button.css" rel="stylesheet">
+    <script src="js/validate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    const submit = function(e) {
+        e.preventDefault();
+        const formdata = new FormData(e.target.form);
+        const queryString = new URLSearchParams(formdata).toString();
+        fetch(`php/script.php?${queryString}`, {
+            method: 'GET',
+        })
+            .then(ans => ans.text())
+            .then(table => document.querySelector('#ans').innerHTML = table);
+    };
+
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector('#submitButton').addEventListener('click', submit);
+    });
+
+    const clear = function(e) {
+        e.preventDefault();
+        fetch('reset.php')
+            .then(ans => ans.text())
+            .then(table => document.querySelector('#ans').innerHTML=table);
+    };
+
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector('#clearButton').addEventListener('click', clear);
+    });
+
+    function validateY(inp) {
+        let val = parseFloat(inp.value.replace(',','.'))
+        if (isNaN(val)){
+            return false
+        }
+        return val <= 5 && val >= -3
+    }
+
+    function validate() {
+        $("#submitButton")[0].disabled = !validateY($('#y_set')[0]);
+    }
+
+</script>
+
+<header class="header studentInf">
+<span>Matveev Oleg Igorevich, P3213</span>
+    <div class="right">Вариант 2413, Программирование интернет приложений, 1 Лабораторная </div>
+</header>
+<section class="block-left">
+    <div class="block-set">
+    <form id="form" method="GET" oninput="">
+        <div class="inputX centered">
+            <label for><div>R Value:</div></label>
+            <div class="form_radio_group">
+                <div class="form_radio_group-item">
+                    <input id="radio-1" type="radio" name="r_set" value="1" checked>
+                    <label for="radio-1">1</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-2" type="radio" name="r_set" value="2">
+                    <label for="radio-2">2</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-3" type="radio" name="r_set" value="3">
+                    <label for="radio-3">3</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-4" type="radio" name="r_set" value="4">
+                    <label for="radio-4">4</label>
+                </div>
+                <div class="form_radio_group-item">
+                    <input id="radio-5" type="radio" name="r_set" value="5">
+                    <label for="radio-5">5</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="inputR centered">
+            <label for><div>X Value:</div></label>
+            <div class="form_radio_group-itemTwo">
+                <input type="radio" name="x_set" value="-3">-3
+                <input type="radio" name="x_set" value="0">0
+                <input type="radio" name="x_set" value="3">3
+            </div>
+            <div class="form_radio_group-itemTwo">
+                <input type="radio" name="x_set" value="-2">-2
+                <input type="radio" name="x_set" value="1" checked>1
+                <input type="radio" name="x_set" value="4">4
+            </div>
+            <div class="form_radio_group-itemTwo">
+                <input type="radio" name="x_set" value="-1">-1
+                <input type="radio" name="x_set" value="2">2
+                <input type="radio" name="x_set" value="5">5
+            </div>
+        </div>
+            <div>
+                <div class="inputY centered">
+                    <label for><div>Y Value:</div></label>
+                    <input id="y_set" type="text" name="y_set" required size="1" oninput="validate()" onchange="validate()"
+                           placeholder="-3..5">
+                    <div class="errorMessage" id="error"></div>
+                    <div></div>
+                </div>
+            </div>
+        <INPUT class="resetButton" type=reset value=Сброс id="clearButton">
+        <INPUT class="sendButton" type=submit value=Пуск id="submitButton" disabled>
+        <img src="static/images/area.PNG" width="325" height="300">
+    </form>
+    </div>
+    <div class="table-wrapper animated slideInRight" style="overflow-x: auto;" id="ans">
+        <div class="table" style="">
+            <div class="table-header" style="overflow-x: auto">
+                <div class="header__item"><a id="x-table" class="filter__link" href="#">X</a></div>
+                <div class="header__item"><a id="y-table" class="filter__link filter__link--number" href="#">Y</a></div>
+                <div class="header__item"><a id="r-table" class="filter__link filter__link--number" href="#">R</a></div>
+                <div class="header__item"><a id="result-table" class="filter__link filter__link--number" href="#">result</a></div>
+                <div class="header__item"><a id="time-table" class="filter__link filter__link--number" href="#">Time</a></div>
+                <div class="header__item"><a id="cr-time-table" class="filter__link filter__link--number" href="#">Benchmark</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+</table>
+<footer class="footer">
+    <div class="centered">
+        <span>&copy;Matveev Oleg 2020</span>
+        <br><a href="https://github.com/OlegMatveevS/lab1"><img src="static/images/github.png" alt="github" width="70" height="35"> </a>
+    </div>
+</footer>
+</body>
+</html>

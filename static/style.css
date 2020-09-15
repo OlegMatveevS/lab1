@@ -1,29 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200');
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
 body {
     font-family: "monospace";
     color: dodgerblue;
     padding: 0;
 }
 
-table.max-size {
-    width: 100%;
-    height: 100%;
-}
-
-#X-table {
-    width: 420px;
-    border: 1px white;
-}
-
 .block-left {
-    width: 80%;
+    width: 100%;
     height: 80vh;
     overflow: auto;
     float: left;
@@ -31,40 +15,47 @@ table.max-size {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.block-right {
-    width: 20%;
-    height: 80vh;
-    overflow: auto;
-    background: #F2F2F2;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.block-set{
+    font-size: large;
+    width: 400px;
+    height: 0px;
 }
 
 .inputX {
+    color: black;
+    font-size: large;
     position: relative;
     top: 1px;
     float: left;
-    height: 220px;
-    width: 70px;
-    margin: 1px;
+    height: 352px;
+    width: 120px;
+    margin: 0.3%;
     border: 0.3vh solid #008CBA;
     border-radius: 0.5vh;
 }
 
 .inputR {
+    color: black;
+    font-size: large;
+    width: 200px;
+    height: 150px;
     position: relative;
     top: 1px;
     float: left;
-    margin: 1px;
+    margin: 0.3%;
     border: 0.3vh solid #008CBA;
     border-radius: 0.5vh;
 }
 
 .inputY {
+    color: black;
+    font-size: large;
     position: relative;
     top: 1px;
     float: left;
-    width: 107px;
-    margin: 1px;
+    height: 65px;
+    width: 200px;
+    margin: 0.3%;
     border: 0.3vh solid #008CBA;
     border-radius: 0.5vh;
 }
@@ -74,7 +65,7 @@ table.max-size {
 }
 
 .header {
-    font-family: "Times New Roman", sans-serif;
+    font-family: "monospace", sans-serif;
     font-size: large;
     color: black;
     padding: 2%;
@@ -82,35 +73,131 @@ table.max-size {
 }
 
 .footer {
-    font-family: "Times New Roman", sans-serif;
+    font-family: "monospace", sans-serif;
     font-size: large;
     color: black;
-    padding: 2%;
     background-color: hsla(0,0%,100%,.2);
 }
 
 .sendButton {
-    position: relative;
     float: left;
-    width: 111px;
-    height: 46px;
+    width: 204px;
+    height: 64px;
     top: 1px;;
-    margin: 1px;
+    margin: 0.3%;
     border: 0.3vh solid #008CBA;
     border-radius: 0.5vh;
+    font-size: large;
 }
 
 .resetButton {
     position: relative;
     float: left;
-    width: 111px;
-    height: 46px;
+    width: 204px;
+    height: 64px;
     top: 1px;
-    margin: 1px;
+    margin: 0.3%;
     border: 0.3vh solid #008CBA;
     border-radius: 0.5vh;
+    font-size: large;
 }
 
-.block-set {
-    width: 200px;
+
+.errorMessage {
+    color: red;
 }
+
+.table {
+
+    border: 1px solid #EEEEEE;
+}
+
+.table-header {
+    display: flex;
+    width: 100%;
+    background: #008CBA;
+    padding: 2% 0;
+}
+
+.table-row {
+    display: flex;
+    width: 100%;
+    padding: 18px 0;
+}
+.table-row:nth-of-type(odd) {
+    background: #EEEEEE;
+}
+
+.table-data, .header__item {
+    flex: 1 1 20%;
+    text-align: center;
+}
+
+.header__item {
+    text-transform: uppercase;
+}
+
+.filter__link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.filter__link::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.filter__link.desc::after {
+    content: "(desc)";
+}
+
+.filter__link.asc::after {
+    content: "(asc)";
+}
+
+.table-wrapper {
+    justify-content:center;
+    align-items:center;
+    margin: 0 auto;
+}
+
+.data-send-form {
+    float: right;
+    margin: 0 auto;
+}
+
+img {
+    margin: 0.5%;
+}
+
+.right {
+    float: right;
+}
+
+input[type=text] {
+    text-align: center;
+    padding: 3%;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border: 0.3vh solid #008CBA;
+    border-radius: 10px;
+}
+
+input[type=radio] {
+    text-align: center;
+    padding: 3%;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border: 0.3vh solid #008CBA;
+    border-radius: 10px;
+}
+
+
+
