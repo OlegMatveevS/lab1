@@ -27,7 +27,7 @@
 
     const clear = function(e) {
         e.preventDefault();
-        fetch('reset.php')
+        fetch('php/reset.php')
             .then(ans => ans.text())
             .then(table => document.querySelector('#ans').innerHTML=table);
     };
