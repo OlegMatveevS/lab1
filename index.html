@@ -39,22 +39,17 @@
         document.querySelector('#clearButton').addEventListener('click', clear);
     });
 
-    function reverseString(str) {
-
-        return str.split("").reverse().join("");
-
-    }
-
     function validateY(inp) {
+        let elemY = $("#y_set");
         let val = Number(inp.value.replace(',','.'))
-        if ( isNaN(val) || typeof(val) != "number"){
+        if ( isNaN(val) || typeof(val) != "number" || elemY.val()===""){
             return false
         }
         return val <= 5 && val >= -3
     }
 
     function validate() {
-        $("#submitButton")[0].disabled = !validateY($('#y_set')[0]);
+        $("#submitButton")[0].disabled = !validateY($('#y_set')[0])
     }
 
 
@@ -114,7 +109,7 @@
             <div>
                 <div class="inputY centered">
                     <label for><div>Y Value:</div></label>
-                    <input id="y_set" type="text" name="y_set" required size="1" oninput="validate()" onchange="validate()"
+                    <input id="y_set" type="text" name="y_set" required size="3" oninput="validate()" onchange="validate()"
                            placeholder="-3..5" >
                     <div class="errorMessage" id="error"></div>
                     <div></div>
