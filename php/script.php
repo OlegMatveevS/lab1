@@ -30,7 +30,7 @@ $res = check ($x, $y, $r);
 $time = microtime(true) - $start;
 $s = pow(10,$decimal);
 
-$result = array($x, intval($y * $s) / $s, $r, $res, $currentTime, $time);
+$result = array($x, intval($y * 100) / 100, $r, $res, $currentTime, $time);
 
 
 if (!isset($_SESSION['history'])) {

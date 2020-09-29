@@ -29,6 +29,7 @@
     });
     const clear = function(e) {
         e.preventDefault();
+        $('form input[type="text"], form input[type="password"], form textarea').val('');
         fetch('php/reset.php')
             .then(ans => ans.text())
             .then(table => document.querySelector('#ans').innerHTML=table);
@@ -124,16 +125,6 @@
         <INPUT class="resetButton" type=reset value=Сброс id="clearButton">
         <INPUT class="sendButton" type=submit value=Пуск id="submitButton" disabled>
         <img src="static/images/area.PNG" width="325" height="300">
-            <label for><div>Decimal Value:</div></label>
-            <select class="decimal centered" name = "decimal">
-                <option value="0"> 0 </option>
-                <option value="1"> 1 </option>
-                <option value="2"> 2 </option>
-                <option value="3"> 3 </option>
-                <option value="4"> 4 </option>
-                <option value="5"> 5 </option>
-                <option value="6"> 6 </option>
-            </select>
     </form>
     </div>
     <div class="table-wrapper animated slideInRight" style="overflow-x: auto;" id="ans">
