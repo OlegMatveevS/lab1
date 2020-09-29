@@ -13,11 +13,10 @@ $currentTime = date("H:i:s");
 $start = microtime(true);
 
 function checkArea($x, $y, $r){
-    return !in_array($r, array(1, 2, 3, 4, 5)) || !is_numeric($y ) || $y < -3 || $y > 5 || !in_array($x, array(-3, -2, -1, 0, 1, 2, 3, 4, 5));
+    return !in_array($r, array(1, 2, 3, 4, 5)) ||  !is_double($y) || $y < -3 || ceil(($y)) > 5 || !in_array($x, array(-3, -2, -1, 0, 1, 2, 3, 4, 5));
 }
 
-
-
+$decimal = (int) $_GET['decimal'];
 $x = (int) $_GET['x_set'];
 $y = (float) str_replace(",", ".", $_GET['y_set']);
 $r = (int) $_GET['r_set'];
@@ -29,7 +28,9 @@ if (checkArea($x, $y, $r)) {
 
 $res = check ($x, $y, $r);
 $time = microtime(true) - $start;
-$result = array($x, intval($y * 100) / 100, $r, $res, $currentTime, $time);
+$s = pow(10,$decimal);
+
+$result = array($x, intval($y * $s) / $s, $r, $res, $currentTime, $time);
 
 
 if (!isset($_SESSION['history'])) {

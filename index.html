@@ -27,7 +27,6 @@
     document.addEventListener('DOMContentLoaded', function(){
         document.querySelector('#submitButton').addEventListener('click', submit);
     });
-
     const clear = function(e) {
         e.preventDefault();
         fetch('php/reset.php')
@@ -40,9 +39,17 @@
     });
 
     function validateY(inp) {
-        let elemY = $("#y_set");
-        let val = Number(inp.value.replace(',','.'))
-        if ( isNaN(val) || typeof(val) != "number" || elemY.val()===""){
+        let elemY = ($('#y_set'))
+        Math.trunc(elemY)
+        let c = (inp.value.replace(',','.'))
+        c = c.split('.')
+        c = Number(c[1])
+        let val = Number((inp.value.replace(',','.')))
+        if ( isNaN(val) || typeof(val) != "number" || elemY.val()==="" ){
+                return false
+        }else if (val === 5 && c > 0)  {
+            return false
+        }else if (val === -3 && c > 0)  {
             return false
         }
         return val <= 5 && val >= -3
@@ -51,7 +58,6 @@
     function validate() {
         $("#submitButton")[0].disabled = !validateY($('#y_set')[0])
     }
-
 
 </script>
 
@@ -109,7 +115,7 @@
             <div>
                 <div class="inputY centered">
                     <label for><div>Y Value:</div></label>
-                    <input id="y_set" type="text" name="y_set" required size="3" oninput="validate()" onchange="validate()"
+                    <input id="y_set" type="text" name="y_set" required size="3" oninput="validate()" onchange="validate() "
                            placeholder="-3..5" >
                     <div class="errorMessage" id="error"></div>
                     <div></div>
@@ -118,6 +124,16 @@
         <INPUT class="resetButton" type=reset value=Сброс id="clearButton">
         <INPUT class="sendButton" type=submit value=Пуск id="submitButton" disabled>
         <img src="static/images/area.PNG" width="325" height="300">
+            <label for><div>Decimal Value:</div></label>
+            <select class="decimal centered" name = "decimal">
+                <option value="0"> 0 </option>
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+                <option value="4"> 4 </option>
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+            </select>
     </form>
     </div>
     <div class="table-wrapper animated slideInRight" style="overflow-x: auto;" id="ans">
